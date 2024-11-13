@@ -2061,40 +2061,4 @@ setInterval(transports.updateTable, 1000);
 transports.updateUpcoming();
 setInterval(transports.updateUpcoming, 1000);
 
-changeUpcomingTypeBtn.addEventListener("click", transports.changeUpcomingType);
-upcomingTypeText.addEventListener("click", transports.changeUpcomingType);
-
-window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (event) => {
-        colorTheme = event.matches ? "dark" : "light";
-
-        document.body.className = colorTheme;
-    });
-
-document.addEventListener("click", (e) => {
-    if (e.target.className == "alert-modal") {
-        alertModal.style.display = "none";
-    }
-});
-
-closeModalBtn.addEventListener("click", () => {
-    alertModal.style.display = "none";
-});
-
-dontShowAgainBtn.addEventListener("click", (e) => {
-    if (e.currentTarget.dataset.status == "clicked") {
-        e.currentTarget.dataset.status = "unclicked";
-        dsaIcon.style.display = "none";
-        alertModalDSA = "false";
-    } else {
-        e.currentTarget.dataset.status = "clicked";
-        dsaIcon.style.display = "flex";
-        alertModalDSA = "true";
-    }
-});
-
-approveModalBtn.addEventListener("click", () => {
-    alertModal.style.display = "none";
-    localStorage.setItem("alertModalDSA", alertModalDSA);
-});
+change
