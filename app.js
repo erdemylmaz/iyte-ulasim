@@ -1,3 +1,14 @@
+/*
+    SCRAPPER
+const uls = document.querySelectorAll('ul');
+const times = uls[33].querySelectorAll('.push-left-5');
+const output = []
+times.forEach((time) => {
+    const data = time.innerHTML.split(":");
+    output.push({h: parseInt(data[0]), m: parseInt(data[1])});
+})
+*/
+
 const transportsTable = document.querySelector(".transports-table");
 const upcomingsArea = document.querySelector(".upcoming-list");
 const changeUpcomingTypeBtn = document.querySelector(
@@ -755,12 +766,16 @@ class Transports {
             iyte_departures: [
                 [
                     {
+                        h: 6,
+                        m: 35,
+                    },
+                    {
                         h: 7,
                         m: 30,
                     },
                     {
                         h: 8,
-                        m: 40,
+                        m: 45,
                     },
                     {
                         h: 9,
@@ -776,46 +791,54 @@ class Transports {
                     },
                     {
                         h: 11,
-                        m: 0,
-                    },
-                    {
-                        h: 12,
                         m: 10,
                     },
                     {
-                        h: 13,
-                        m: 20,
-                    },
-                    {
-                        h: 14,
+                        h: 12,
                         m: 30,
                     },
                     {
+                        h: 13,
+                        m: 50,
+                    },
+                    {
                         h: 15,
-                        m: 40,
+                        m: 10,
                     },
                     {
                         h: 16,
+                        m: 30,
+                    },
+                    {
+                        h: 17,
                         m: 50,
                     },
                     {
                         h: 18,
-                        m: 5,
-                    },
-                    {
-                        h: 18,
-                        m: 55,
+                        m: 30,
                     },
                     {
                         h: 19,
-                        m: 45,
+                        m: 10,
                     },
                     {
                         h: 20,
-                        m: 35,
+                        m: 30,
+                    },
+                    {
+                        h: 21,
+                        m: 30,
+                    },
+                    {
+                        h: 22,
+                        m: 30,
                     },
                 ], // weekdays
                 [
+                    {
+                        h: 7,
+                        m: 20,
+                    },
                     {
                         h: 8,
                         m: 30,
@@ -863,6 +886,10 @@ class Transports {
                     {
                         h: 20,
                         m: 55,
+                    },
+                    {
+                        h: 22,
+                        m: 0,
                     },
                 ], // weekends
             ],
@@ -886,7 +913,7 @@ class Transports {
                     },
                     {
                         h: 8,
-                        m: 30,
+                        m: 35,
                     },
                     {
                         h: 9,
@@ -894,39 +921,47 @@ class Transports {
                     },
                     {
                         h: 11,
-                        m: 0,
-                    },
-                    {
-                        h: 12,
                         m: 10,
                     },
                     {
-                        h: 13,
-                        m: 20,
-                    },
-                    {
-                        h: 14,
+                        h: 12,
                         m: 30,
                     },
                     {
-                        h: 15,
-                        m: 40,
-                    },
-                    {
-                        h: 16,
+                        h: 13,
                         m: 50,
                     },
                     {
-                        h: 17,
-                        m: 40,
+                        h: 15,
+                        m: 10,
                     },
                     {
-                        h: 18,
+                        h: 16,
                         m: 30,
                     },
                     {
+                        h: 17,
+                        m: 10,
+                    },
+                    {
+                        h: 17,
+                        m: 50,
+                    },
+                    {
                         h: 19,
-                        m: 20,
+                        m: 10,
+                    },
+                    {
+                        h: 20,
+                        m: 30,
+                    },
+                    {
+                        h: 21,
+                        m: 30,
+                    },
+                    {
+                        h: 22,
+                        m: 30,
                     },
                 ], // weekdays
                 [
@@ -977,6 +1012,14 @@ class Transports {
                     {
                         h: 19,
                         m: 45,
+                    },
+                    {
+                        h: 20,
+                        m: 55,
+                    },
+                    {
+                        h: 22,
+                        m: 0,
                     },
                 ], // weekends
             ],
@@ -1020,39 +1063,35 @@ class Transports {
                     },
                     {
                         h: 12,
-                        m: 35,
+                        m: 40,
                     },
                     {
                         h: 13,
+                        m: 30,
+                    },
+                    {
+                        h: 14,
                         m: 20,
-                    },
-                    {
-                        h: 14,
-                        m: 5,
-                    },
-                    {
-                        h: 14,
-                        m: 50,
                     },
                     {
                         h: 15,
-                        m: 35,
+                        m: 10,
                     },
                     {
                         h: 16,
-                        m: 20,
+                        m: 0,
                     },
                     {
-                        h: 17,
-                        m: 5,
-                    },
-                    {
-                        h: 17,
+                        h: 16,
                         m: 50,
                     },
                     {
+                        h: 17,
+                        m: 40,
+                    },
+                    {
                         h: 18,
-                        m: 35,
+                        m: 30,
                     },
                     {
                         h: 19,
@@ -1061,6 +1100,10 @@ class Transports {
                     {
                         h: 20,
                         m: 0,
+                    },
+                    {
+                        h: 20,
+                        m: 40,
                     },
                     {
                         h: 21,
@@ -1158,43 +1201,43 @@ class Transports {
                     },
                     {
                         h: 12,
-                        m: 35,
+                        m: 40,
                     },
                     {
                         h: 13,
+                        m: 30,
+                    },
+                    {
+                        h: 14,
                         m: 20,
-                    },
-                    {
-                        h: 14,
-                        m: 5,
-                    },
-                    {
-                        h: 14,
-                        m: 50,
                     },
                     {
                         h: 15,
-                        m: 35,
+                        m: 10,
                     },
                     {
                         h: 16,
-                        m: 20,
+                        m: 0,
                     },
                     {
-                        h: 17,
-                        m: 5,
-                    },
-                    {
-                        h: 17,
+                        h: 16,
                         m: 50,
                     },
                     {
+                        h: 17,
+                        m: 40,
+                    },
+                    {
                         h: 18,
-                        m: 35,
+                        m: 30,
                     },
                     {
                         h: 19,
                         m: 20,
+                    },
+                    {
+                        h: 20,
+                        m: 0,
                     },
                     {
                         h: 20,
@@ -1442,6 +1485,14 @@ class Transports {
         this.initTransports();
     };
 
+    formatTime = (remainingTime) => {
+        return remainingTime < 60
+            ? `in ${remainingTime} minutes`
+            : `in ${Math.floor(remainingTime / 60)} hours ${
+                  remainingTime % 60
+              } minutes`;
+    };
+
     updateUpcoming = () => {
         upcomingsArea.innerHTML = ``;
         this.upcomingTimes = [];
@@ -1650,16 +1701,22 @@ class Transports {
                 </div>
 
                 <div class="upcoming-right">
-                    <div class="remaining-time">${
-                        upcoming.remainedMinute < 60
-                            ? `in ${upcoming.remainedMinute} minutes`
-                            : `in ${Math.floor(
-                                  upcoming.remainedMinute / 60
-                              )} hours ${upcoming.remainedMinute % 60} minutes`
-                    }</div>
-                    <div class="upcoming-time">[${this.addExtraZero(
-                        upcoming.departureH
-                    )}.${this.addExtraZero(upcoming.departureM)}]</div>
+                    <div class="upcoming-right-top">
+                        <div class="remaining-time">${this.formatTime(
+                            upcoming.remainedMinute
+                        )}</div>
+                        <div class="upcoming-time">[${this.addExtraZero(
+                            upcoming.departureH
+                        )}.${this.addExtraZero(upcoming.departureM)}]</div>
+                    </div>
+                    <div class="upcoming-right-bottom">
+                        <div class="remaining-time">${this.formatTime(
+                            upcoming.remainedMinute
+                        )}</div>
+                        <div class="upcoming-time">[${this.addExtraZero(
+                            upcoming.departureH
+                        )}.${this.addExtraZero(upcoming.departureM)}]</div>
+                    </div>
                 </div> 
             `;
 
