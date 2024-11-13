@@ -420,10 +420,6 @@ body {
     .info-row {
         font-size: 10px;
     }
-
-    .upcoming-right-bottom * {
-        font-size: 10px;
-    }
 }
 
 
@@ -792,28 +788,4 @@ a:hover {
 .footer a {
     /* text-decoration: underline; */
     color: var(--excalidrawBlue) !important;
-}
-
-
-.upcoming-right {
-    display: flex;
-    flex-direction: column;
-}
-
-.upcoming-right-top {
-    width: 100%;
-    display: flex;
-}
-
-.upcoming-right-bottom {
-    width: 100%;
-    display: flex;
-    font-size: 14px;
-    color: #232323;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.upcoming-right-bottom * {
-    color: #aaa;
 }

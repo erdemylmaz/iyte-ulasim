@@ -1,14 +1,3 @@
-/*
-    SCRAPPER
-const uls = document.querySelectorAll('ul');
-const times = uls[33].querySelectorAll('.push-left-5');
-const output = []
-times.forEach((time) => {
-    const data = time.innerHTML.split(":");
-    output.push({h: parseInt(data[0]), m: parseInt(data[1])});
-})
-*/
-
 const transportsTable = document.querySelector(".transports-table");
 const upcomingsArea = document.querySelector(".upcoming-list");
 const changeUpcomingTypeBtn = document.querySelector(
@@ -1485,14 +1474,6 @@ class Transports {
         this.initTransports();
     };
 
-    formatTime = (remainingTime) => {
-        return remainingTime < 60
-            ? `in ${remainingTime} minutes`
-            : `in ${Math.floor(remainingTime / 60)} hours ${
-                  remainingTime % 60
-              } minutes`;
-    };
-
     updateUpcoming = () => {
         upcomingsArea.innerHTML = ``;
         this.upcomingTimes = [];
@@ -1699,25 +1680,18 @@ class Transports {
                     <div class="upcoming-name">${transport.name}</div>
                     <div class="upcoming-price"> ${transport.price}₺</div>
                 </div>
-
                 <div class="upcoming-right">
-                    <div class="upcoming-right-top">
-                        <div class="remaining-time">${this.formatTime(
-                            upcoming.remainedMinute
-                        )}</div>
-                        <div class="upcoming-time">[${this.addExtraZero(
-                            upcoming.departureH
-                        )}.${this.addExtraZero(upcoming.departureM)}]</div>
-                    </div>
-                    <div class="upcoming-right-bottom">
-                        <div class="remaining-time">${this.formatTime(
-                            upcoming.remainedMinute
-                        )}</div>
-                        <div class="upcoming-time">[${this.addExtraZero(
-                            upcoming.departureH
-                        )}.${this.addExtraZero(upcoming.departureM)}]</div>
-                    </div>
-                </div> 
+                    <div class="remaining-time">${
+                        upcoming.remainedMinute < 60
+                            ? `in ${upcoming.remainedMinute} minutes`
+                            : `in ${Math.floor(
+                                  upcoming.remainedMinute / 60
+                              )} hours ${upcoming.remainedMinute % 60} minutes`
+                    }</div>
+                    <div class="upcoming-time">[${this.addExtraZero(
+                        upcoming.departureH
+                    )}.${this.addExtraZero(upcoming.departureM)}]</div>
+                </div>
             `;
 
             const remainingTimeArea =
@@ -1801,7 +1775,6 @@ class Transports {
                     All Transports
                 </div>
             </div>
-
             <!-- <div class="soon-transport">Kaydırak <span class="soon-text">(Yakında)</span></div> -->
         `;
         this.transports.map((transport, tIndex) => {
@@ -1818,17 +1791,14 @@ class Transports {
                             transport.price ? `${transport.price}₺` : ""
                         }</div>
                     </div>
-
                     <div class="element-right">
                         <div class="element-times">${transport.workText}</div>
                         <div class="show-more-btn"><i class="fa-solid fa-angle-down"></i></div>
                     </div>
-                </div> 
-
+                </div>
                 <div class="element-inside">
                     <div class="weekdays-side inside-side">
                         <div class="side-text">Weekdays</div>
-
                         <div class="time-table weekdays-time-table">
                             <div class="table-top">
                                 <div class="iyte-departure-text departure-text">${
@@ -1840,16 +1810,13 @@ class Transports {
                             </div>
                         </div>
                     </div>
-
                     <div class="vertical-line"></div>
-
                     <div class="weekends-side inside-side">
                         <div class="side-text">${
                             transport.name == "883 - EShot"
                                 ? "Saturday"
                                 : "Weekends"
                         }</div>
-
                         <div class="time-table weekends-time-table">
                             <div class="table-top">
                                 <div class="iyte-departure-text departure-text">${
@@ -1858,11 +1825,10 @@ class Transports {
                                 <div class="faltay-departure-text departure-text">${
                                     transport.other
                                 }</div>
-                            </div> 
-
+                            </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             `;
 
             // INIT FOR WEEKDAYS
@@ -2061,4 +2027,40 @@ setInterval(transports.updateTable, 1000);
 transports.updateUpcoming();
 setInterval(transports.updateUpcoming, 1000);
 
-change
+changeUpcomingTypeBtn.addEventListener("click", transports.changeUpcomingType);
+upcomingTypeText.addEventListener("click", transports.changeUpcomingType);
+
+window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (event) => {
+        colorTheme = event.matches ? "dark" : "light";
+
+        document.body.className = colorTheme;
+    });
+
+document.addEventListener("click", (e) => {
+    if (e.target.className == "alert-modal") {
+        alertModal.style.display = "none";
+    }
+});
+
+closeModalBtn.addEventListener("click", () => {
+    alertModal.style.display = "none";
+});
+
+dontShowAgainBtn.addEventListener("click", (e) => {
+    if (e.currentTarget.dataset.status == "clicked") {
+        e.currentTarget.dataset.status = "unclicked";
+        dsaIcon.style.display = "none";
+        alertModalDSA = "false";
+    } else {
+        e.currentTarget.dataset.status = "clicked";
+        dsaIcon.style.display = "flex";
+        alertModalDSA = "true";
+    }
+});
+
+approveModalBtn.addEventListener("click", () => {
+    alertModal.style.display = "none";
+    localStorage.setItem("alertModalDSA", alertModalDSA);
+});
