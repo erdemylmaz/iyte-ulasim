@@ -627,10 +627,20 @@ a:hover {
 }
 
 .info {
+    width: 100%;
+    max-width: 512px;
     height: 12vh;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-update-text {
+    color: #aaa;
+    margin-bottom: 4px;
+    font-weight: 600;
 }
 
 .info-row {
@@ -640,6 +650,12 @@ a:hover {
 
 .info-row span {
     font-weight: 200;
+}
+
+.descriptions {
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
 }
 
 .alert-modal {
