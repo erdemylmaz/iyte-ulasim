@@ -702,7 +702,7 @@ class Transports {
                 }
             } else {
                 if (
-                    !(this.currentDay == 7 && transport.name == "883 - EShot")
+                    !(this.currentDay == 0 && transport.name == "883 - EShot")
                 ) {
                     if (this.upcomingType == 0) {
                         if (transport.iyte_departures[1]) {
