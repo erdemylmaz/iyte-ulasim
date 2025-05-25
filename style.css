@@ -798,10 +798,10 @@ a:hover {
 
 .footer i {
     margin: auto 8px;
-    color: var(--gdscRed)
+    color: #131313;
 }
 
 .footer a {
-    /* text-decoration: underline; */
-    color: var(--excalidrawBlue) !important;
+    text-decoration: underline;
+    color: #131313;
 }
