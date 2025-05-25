@@ -166,7 +166,7 @@ class Transports {
     { h: 19, m: 25 },
     { h: 20, m: 10 },
     { h: 21, m: 10 },
-]]
+]
                 , // weekdays
                 [
     { h: 8, m: 40 },
