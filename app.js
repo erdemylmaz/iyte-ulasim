@@ -18,9 +18,9 @@ if (!localStorage.getItem("alertModalDSA")) {
     alertModal.style.display = "flex";
 } else {
     alertModalDSA = localStorage.getItem("alertModalDSA");
-
+    
     if (alertModalDSA == "true") {
-        alertModal.style.display = "none";
+        alertModal.style.display = "flex"; // none by default
     } else {
         alertModal.style.display = "flex";
     }
